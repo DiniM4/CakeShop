@@ -1,0 +1,27 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package validation;
+
+/**
+ *
+ * @author Dini
+ */
+public class CusLoginValidator {
+
+    public void validateCusLogin(String email, String password) throws Exception {
+
+        if (email.isEmpty()) {
+            throw new Exception("Please enter your email");
+        } else if (!email.matches("^(?=.{1,64}@)[A-Za-z0-9\\+_-]+(\\.[A-Za-z0-9\\+_-]+)*@[^-][A-Za-z0-9\\+-]+(\\.[A-Za-z0-9\\+-]+)*(\\.[A-Za-z]{2,})$")) {
+            throw new Exception("Invalid email");
+        }
+
+        if (password.isEmpty()) {
+            throw new Exception("Please enter your password");
+
+        }
+    }
+
+}
